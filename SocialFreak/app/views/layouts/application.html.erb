@@ -12,7 +12,7 @@
       <%= link_to 'Social Freak', root_path, class: 'navbar-brand' %>
     <div id="navbar">
       <% if current_user %>
-        <ul class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav navbar-right">
           <li><%=  current_user.name %></li>
           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
         </ul>
@@ -32,6 +32,7 @@
       <%= value %>
     </div>
   <% end %>
+  </div>
 <div class="container">
   <%= yield %>
 </div>
