@@ -5,24 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag("favicon.ico")%>
 </head>
 <body>
 	<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
       <%= link_to 'Social Freak', root_path, class: 'navbar-brand' %>
-    <div id="navbar">
+      <nav>
       <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
           <li><%=  current_user.name %></li>
           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
         </ul>
       <% else %>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Twitter', '/auth/twitter' %></li>
           <li><%= link_to 'Google+', '/auth/google' %></li>
         </ul>
       <% end %>
-    </div>
+      </nav>
   </div>
 </header>
 

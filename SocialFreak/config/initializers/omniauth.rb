@@ -4,7 +4,7 @@ tsec = 'r2sd6DDRsMmK3RXsAuEEqF7CGx7Yqk05wpsS7WBELXFzJ4kyaY'
 gkey = '92961498578-h7uoof6r38o0gjh67fhv4hvupd5t9ifg.apps.googleusercontent.com'
 gsec = '_0g7y4uKCIpSPNYs6H5amUog'
 Rails.application.config.middleware.use OmniAuth::Builder do 
- provider :twitter, ENV[tkey], ENV[tsec]
+ provider :twitter, 'VVJTUONirmCDwkDePgpgLoK60', 'r2sd6DDRsMmK3RXsAuEEqF7CGx7Yqk05wpsS7WBELXFzJ4kyaY'
 
 
  provider :google_oauth2, client_id:'92961498578-h7uoof6r38o0gjh67fhv4hvupd5t9ifg.apps.googleusercontent.com' , client_secret:'_0g7y4uKCIpSPNYs6H5amUog',

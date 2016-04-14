@@ -9,6 +9,8 @@
         <li><strong>Provider:</strong> <%= current_user.provider %></li>
         <li><strong>uID:</strong> <%= current_user.uid %></li>
         <li><strong>Location:</strong> <%= current_user.location %></li>
+        <li><strong>URL:</strong> <%= current_user.url %></li>
+        <%= image_tag(current_user.image_url) %> 
         
       </ul>
     </div>
