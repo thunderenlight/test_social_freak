@@ -4,12 +4,17 @@ tsec = 'r2sd6DDRsMmK3RXsAuEEqF7CGx7Yqk05wpsS7WBELXFzJ4kyaY'
 gkey = '92961498578-h7uoof6r38o0gjh67fhv4hvupd5t9ifg.apps.googleusercontent.com'
 gsec = '_0g7y4uKCIpSPNYs6H5amUog'
 Rails.application.config.middleware.use OmniAuth::Builder do 
- provider :twitter, 'VVJTUONirmCDwkDePgpgLoK60', 'r2sd6DDRsMmK3RXsAuEEqF7CGx7Yqk05wpsS7WBELXFzJ4kyaY'
+ provider :twitter, ENV['twitter_key'], ENV['twitter_secret']
 
 
- provider :google_oauth2, client_id:'92961498578-h7uoof6r38o0gjh67fhv4hvupd5t9ifg.apps.googleusercontent.com' , client_secret:'_0g7y4uKCIpSPNYs6H5amUog',
+ provider :google_oauth2, ENV['google_key'], ENV['twitter_key'],
            scope: 'profile', image_aspect_ratio: 'square', image_size: 48, access_type: 'online', name: 'google',
            skip_jwt: true
+
+ provider :facebook, ENV['facebook_key'], ENV['facebook_secret'],
+           scope: 'public_profile', info_fields: 'id,name,link'
+
+
 
 
   OmniAuth.config.on_failure = Proc.new do |env|
